@@ -1,7 +1,9 @@
+import { Button } from "@/components/ui/button";
+
 export default function Home() {
   return (
       <div>
-          <h2>My Lingo</h2>
+          <Button size="lg" variant={"premium"}>Click me!</Button>
       </div>
   );
 }
