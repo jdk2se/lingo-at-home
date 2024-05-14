@@ -14,10 +14,11 @@ export default function Home() {
           <h1 className="text-xl lg:text-3xl font-bold text-neutral-600 max-w-[480px] text-center">
             Do your own lingo at home
           </h1>
-          <ClerkLoading>
-            <Loader className="h-5 w-50 text-muted-foreground animate-spin" />
-          </ClerkLoading>
-          <ClerkLoaded>
+          <div className="flex flex-col items-center gap-y-3 max-w-[330px] w-full">
+            <ClerkLoading>
+              <Loader className="h-5 w-50 text-muted-foreground animate-spin" />
+            </ClerkLoading>
+            <ClerkLoaded>
             <SignedOut>
               <SignUpButton mode='modal' fallbackRedirectUrl={'/learn'}>
                 <Button size={'lg'} variant={'secondary'} className='w-full'>
@@ -42,6 +43,7 @@ export default function Home() {
               </Button>
             </SignedIn>
           </ClerkLoaded>
+          </div>
         </div>
       </div>
   );
