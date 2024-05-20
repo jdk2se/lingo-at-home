@@ -1,7 +1,7 @@
 "use server";
 
 import { auth, currentUser } from "@clerk/nextjs/server";
-import { getCourseById, getUserPorgress } from "@/db/queries";
+import { getCourseById, getUserProgress } from "@/db/queries";
 import db from "@/db/drizzle";
 import { userProgress } from "@/db/schema";
 import { revalidatePath } from "next/cache";
@@ -24,7 +24,7 @@ export const upsertUserProgress = async (courseId: number) => {
   //   throw new Error("Course is empty");
   // }
   
-  const existingUserProgress = await getUserPorgress();
+  const existingUserProgress = await getUserProgress();
   if (existingUserProgress) {
     await db.update(userProgress).set({
       activeCourseId: courseId,
